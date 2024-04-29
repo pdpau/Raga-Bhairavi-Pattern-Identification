@@ -1,3 +1,5 @@
+# Scripts for data cleaning, smoothing, source separation, etc.
+
 import numpy as np
 
 
