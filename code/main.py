@@ -1,4 +1,6 @@
-from data import load_data, normalize
+from data_processing import load_data, normalize
+from features import *    # Import all functions from the features.py file
+
 
 # Dataset creation
 
