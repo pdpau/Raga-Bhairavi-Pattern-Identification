@@ -15,3 +15,10 @@ def normalize(data: np.array) -> np.array:
     Normalize data
     """
     return data / np.linalg.norm(data)
+
+
+# Apuntes
+# Trim start and end of the signal
+# Interpolate silences of less than 350 ms
+# If we have to compare two samples of slightly different lengths, we can resample them to the same length (or DTW)
+# ...

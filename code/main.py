@@ -1,5 +1,5 @@
-from data_processing import load_data, normalize
-from features import *    # Import all functions from the features.py file
+from scripts.processing.data_processing import load_data, normalize
+from scripts.characterization.features import extract_features    # Import all functions from the features.py file
 
 
 # Dataset creation
@@ -11,6 +11,7 @@ data = load_data(path)
 norm_data = normalize(data)
 
 # Feature extraction
+y = extract_features(norm_data)
 
 # Modelling
 
