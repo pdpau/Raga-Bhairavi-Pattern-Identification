@@ -13,9 +13,13 @@ def extract_features(data: np.array) -> np.array:
 
 
 
+def euclidean_distance(data1: np.array, data2: np.array) -> float: # TODO: Implement this function using an already existing library for Euclidean distance
+    """
+    Compute the Euclidean distance between two signals
+    """
+    return np.linalg.norm(data1 - data2) #¿?
 
-
-def dtw(data1: np.array, data2: np.array) -> float: # TODO: Implement this function using al already existing library for DTW
+def dtw(data1: np.array, data2: np.array) -> float: # TODO: Implement this function using an already existing library for DTW
     """
     Compute the Dynamic Time Warping distance between two signals
     """
