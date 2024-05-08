@@ -16,7 +16,7 @@ def load_data(path: str) -> np.array: # TODO: Implement this function
     """
     return np.array([1, 2, 3, 4, 5])
 
-def normalize(data: np.array) -> np.array:
+def normalize(data: np.array) -> np.array: # Z-score for normalization to all features
     """
     Normalize data
     """
