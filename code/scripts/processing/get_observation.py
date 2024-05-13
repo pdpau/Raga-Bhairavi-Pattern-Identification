@@ -9,7 +9,7 @@ from load_audio import load_audio_file
 # Main function
 def get_observation_koti_janmani(i):
     annotations_df = load_annotations_file("data/raw/annotations_koti_janmani.txt")
-    pitch_df, time, pitch, timestep = load_pitch_file("data/raw/Koti Janmani/Koti Janmani.pitch.txt")
+    pitch_df, time, pitch, cents, timestep = load_pitch_file("data/raw/Koti Janmani/Koti Janmani.pitch.txt")
     audio_time_series, sr = load_audio_file("data/raw/Koti Janmani/Koti Janmani.mp3.mp3", 44100)
 
     row = annotations_df.loc[i]
