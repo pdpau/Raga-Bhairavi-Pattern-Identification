@@ -10,11 +10,13 @@ import pandas as pd
 
 # Other functions
 
-def normalize(data: np.array) -> np.array: # Z-score for normalization to all features
+def zscore_normalization(data: pd.DataFrame, features) -> pd.DataFrame: # Z-score for normalization to all features
     """
-    Normalize data
+    Normalize data using Z-score normalization.
     """
-    return data / np.linalg.norm(data)
+    for feat in features:
+        data[feat] = (data[feat] - data[feat].mean()) / data[feat].std()
+    return data
 
 
 # Apuntes
