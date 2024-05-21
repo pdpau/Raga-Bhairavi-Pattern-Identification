@@ -19,10 +19,10 @@ def load_pitch_file(path: str) -> tuple:
 
     time = pitch_file["time"].values
     pitch = pitch_file["pitch"].values
-    cents = np.array([pitch_to_cents(p) for p in pitch])
+    #cents = np.array([pitch_to_cents(p) for p in pitch])
     timestep = time[1] - time[0]
 
-    return pitch_file, time, pitch, cents, timestep
+    return pitch_file, time, pitch, timestep
 
 # Test main function
 """ pitch_df_kj, time_kj, pitch_kj, timestep_kj = load_pitch_file("data/raw/Koti Janmani/Koti Janmani.pitch.txt")
