@@ -41,12 +41,13 @@ def handle_file_upload(change):
         print(f'Audio duration: {duration} seconds')
         
         # Run final_notebook.py and display its output
-        run_and_display_notebook('C:/Users/alexf/Downloads/Raga-Bhairavi-Pattern-Identification/code/final_notebook_test.ipynb')
+        run_and_display_notebook('../code/final_notebook_test.ipynb')
         
         loading_label.value = ""
 
 # Function to run and display another notebook
-notebook_path = "C:/Users/alexf/Downloads/Raga-Bhairavi-Pattern-Identification/code/final_notebook_test.ipynb"
+
+notebook_path = "../code/final_notebook_test.ipynb"
 def run_and_display_notebook(notebook_path):
     with open(notebook_path) as f:
         nb = nbformat.read(f, as_version=4)
@@ -71,7 +72,8 @@ file_upload.observe(handle_file_upload, names='value')
 output = widgets.Output()
 
 # Create image widget
-image_path = 'C:/Users/alexf/Downloads/pattern.png'  # Replace with the path to your image
+image_path = 'C:/Users/paqui/OneDrive/Documentos/GitHub/Raga-Bhairavi-Pattern-Identification/code/interface/pattern.png'
+#image_path = '../code/interface/pattern.png'  # Replace with the path to your image
 file = open(image_path, "rb")
 image = file.read()
 
