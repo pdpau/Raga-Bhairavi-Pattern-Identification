@@ -1,9 +1,8 @@
-# Raga Bhairavi Pattern Identification
-Pattern identification - Build a methodology that is able to identify repeated instances of melodic patterns. Students will characterize the difference in performance of these annotated melodic patterns and develop a process that can identify them from audio.
+# Raga Ritigowla Pattern Identification
+Pattern identification task - Build a methodology that is able to identify repeated instances of melodic patterns. Students will characterize the difference in performance of these annotated melodic patterns and develop a process that can identify them from audio.
 
 ## Overview
-TODO: 
-This notebook, `final_notebook_nns.ipynb`, provides a comprehensive analysis and comparison of a Gradient Boosting Classifier (GBC) model against random predictions. The main objective is to demonstrate that the GBC model has learned to classify data better than random chance. The notebook includes data preparation, model training, evaluation, and comparison steps.
+This notebook `final_notebook_nns.ipynb` aims to, through the selection of the most significant features, train a model that can identify the nns pattern, one of the most common ones in Raga Ritigowla. This notebook trains diferent models and compares their performance against a random prediction. The models are a Gradient Boosting Classifier (GBC) and Random Forest Classifier (RFC). The notebook includes data preparation, model training, evaluation, and comparison steps.
 
 ## Table of Contents
 
@@ -22,27 +21,30 @@ Before running the notebook, ensure you have the following installed:
 - Required Python libraries:
   - `numpy`
   - `pandas`
+  - `librosa`
+  - `math`
+  - `scipy`
   - `scikit-learn`
   - `matplotlib`
-  - TODO: falta algun...
+  - `IPython.display`
 
 You can install the required libraries using `pip`:
 
 ```bash
-pip install numpy pandas scikit-learn matplotlib
+pip install numpy pandas librosa scipy scikit-learn matplotlib IPython
 ```
 
 ## Setting Up the Environment
 #### Clone or Download the Repository:
 Clone the repository to your local machine or download it as a ZIP file and extract it.
 ```bash
-git clone <repository_url>
+git clone https://github.com/pdpau/Raga-Bhairavi-Pattern-Identification.git
 ```
 
 #### Navigate to the Directory:
 Change to the directory where the notebook is located.
 ```bash
-cd <repository_directory>
+cd code
 ```
 
 #### Start Jupyter Notebook:
@@ -52,20 +54,28 @@ jupyter notebook
 ```
 
 #### Open the Notebook:
-In the Jupyter interface, open final_notebook_nns.ipynb.
+In the Jupyter interface, open `final_notebook_nns.ipynb` from the list of files.
 
 
 ## Notebook Structure
 The notebook is structured as follows:
 
 #### 1. Installs and imports:
-TODO: Explicar que se hace en esta sección
+In this first section, all the main libraries are installed and imported, some of them are going to be imported when needed in the corresponding cell. The notebook uses the following libraries:
+- `numpy` for numerical operations
+- `pandas` for data manipulation
+- `librosa` for audio processing
+- `math` for mathematical operations
+- `scipy` for scientific computing
+- `scikit-learn` for machine learning
+- `matplotlib` for plotting graphs
+- `IPython.display` for displaying audio files
 
-#### 2. Data Loading and Exploration:
-TODO: Explicar que se hace en esta sección
+#### 2. Loading Data and Characterization:
+The data is loaded from the `data` directory, there are two audio files, Koti Janmani and Vanajaksha Ninni Kore, and their corresponding annotations in a text file. The features are extracted from the annotations, audio and pitch of each song. Once the features are extracted, one single dataframe with 17 features and 2 targets is created.
 
 #### 3. Model Training, Prediction and Evaluation:
-TODO: Explicar que se hace en esta sección (+ explicar random predictions)
+The data is split into training and testing sets. Firstly, a random classifier is used to set the baseline results if the prediction was done by chance. Then, the Gradient Boosting Classifier (GBC) and Random Forest Classifier (RFC) models are trained on the training data. Afterwards, the models are used to predict the test data. Predictions are evaluated using accuracy scores, confusion matrices and other classification reports.
 
 
 ## Running the Notebook
@@ -85,15 +95,12 @@ If you wish to experiment, modify the parameters or try with different datasets.
 
 
 ## Understanding the Output
-TODO: Intro
-#### Data Exploration:
-TODO: Visual and statistical summaries to understand data distribution and characteristics.
 
-#### Model Performance:
-TODO: Accuracy scores and classification reports to evaluate model performance.
+#### Data Visualization:
+Each dataframe generated after each feature extraction is avaliable to visualize, as well as plots of the pitch to see the patterns in the data.
 
-#### Random Baseline:
-TODO: Performance metrics for random predictions to provide a baseline for comparison.
+#### Model Performance and Random Baseline:
+Visual and statistical summaries, like metrics and confusion matrices to understand the performance of each model. Also, the random baseline is shown to compare the performance of the models.
 
 #### Comparison Analysis:
-TODO: Side-by-side comparison of the GBC and random predictions. The analysis should show that the GBC performs better than random chance, indicating it has learned meaningful patterns in the data.
+Side-by-side comparison of the GBC and RFC against random predictions. The analysis should show that the GBC and RFC perform better than random chance, indicating it has learned meaningful patterns in the data.
